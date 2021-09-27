@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Josephine</title>
+	<meta name="description" content="Built by an Analysts for Students! Free alternative To other paid statistics packages. Enter your data and it generates descriptive statistics. ">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body >
+	
+	<main id="main">
+	<section id="secone">
+		<aside id="timezone">
+			<h1  id="timeone">Time: <time>00:00</time></h1>
+		</aside>
+		<div id="div1">
+			<p id="para5">Hello, I am Josephine.</p>
+			<p id="para6" style= "display:none">What's your Name?</p>
+			<input style= "display:none" type="text" name="input1" id="input1" oninput="showButton('btn1')"><button style= "display:none" id="btn1" onclick="para1(); showDiv('div2','div1') ">Click Me</button>
+		</div>
+
+
+		<div style="display:none" id="div2">
+			<p id="para3">Hi <span id="span1"></span>, it's nice to meet you. </p>
+			<p id="para4" style= "display:none"> What is your favourite color?</p>
+			<p style= "display:none" id="para2">
+				<span id="span5"></span> isn't a color silly!!.<br> Mine is Olive, Will you tell me yours now?
+			</p>
+			
+			<input style= "display:none" type="text" name="input2" id="input2" oninput="showButton('btn2')"><button style= "display:none" id="btn2" onclick="changeColor(); predictColor()">Click Me</button><br>
+			<p style= "display:none" id="para11"></p>
+		</div>
+	
+		
+		<div style="display:none" id="div3">
+			<p>Look <span id="span2"></span>!! I changed for you. Do you like it? 
+				<br><button onclick="showDiv('div4','div3')">YES</button><button onclick="changeBack(); showDiv('div4','div3')">NO</button>
+		</div>
+
+
+		<div style="display:none" id="div4">
+			<p>Tell me more, What Year where you Born?</p>
+			<input type="number" name="input3" min="1950" max="2018" id="input3" oninput="showButton('btn3')">
+			<button style= "display:none" id="btn3" onclick="birthYear(); showDiv('div5','div4')">Click Me</button>
+		</div>
+
+
+		<div style="display:none" id="div5">
+			<p id="para7">That's cool, <span id="span3">{Arstist}</span> was also born in <span id="span4"></span>.</p>
+			<p id="para8" style= "display:none">Guess What!!, <br>I'm Psychic, Ask me anything about the future</p>
+			<p id="para10" style= "display:none">Ask me More!!</p>
+			<input type="text" name="input4" id="input4" oninput="showButton('btn4'); showButton('btn5')" style= "display:none">
+			<button style= "display:none" id="btn4" onclick="future()">Click Me</button><button style= "display:none" id="btn5" onclick="cear()">Clear</button><br>
+			<p id="para9"></p>
+		</div>
+
+
+	</section>
+	<section id="endall">
+		<h1>Put this time in this survey when asked: <span id="timespan"></span></h1>
+		<a href="https://nccu.co1.qualtrics.com/jfe/form/SV_3BM1h40S2XQr1uB"><h1>Click here to go to Survey!!</h1></a>
+	</section>
+	</main>	
+</body>
+</html>
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		margin: 0;
+		display: inline-block;
+		width: 100%;
+		transition: Background-color 2s;
+		transition-timing-function: ease;
+		background-image: url('https://banner2.cleanpng.com/20180716/gyu/kisspng-artificial-intelligence-machine-learning-chatbot-n-artificial-intelligence-symbol-5b4cc9c676c860.6985538415317590464865.jpg');
+		background-attachment: fixed;
+		background-size: 10%;
+		animation-name: size;
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes size{
+		0%{background-position: 0%;};
+		10%{background-position: 2%;};
+		20%{background-position: 4%;};
+		30%{background-position: 6%;};
+		40%{background-position: 8%;};
+		50%{background-position: 10%;};
+		60%{background-position: 8%;};
+		70%{background-position: 6%;};
+		80%{background-position: 4%;};
+		90%{background-position: 2%;};
+		100%{background-position: 0%;};
+	}
+	main{
+		position: absolute;
+		top:0px;
+  		right:0px;
+  		bottom:0px;
+  		left:0px;
+		height: 100vh;
+		margin: 0;
+		display: inline-block;
+		width: 100%;
+		transition: Background-color 2s;
+		transition-timing-function: ease;
+		opacity: 0.95;
+		background-color: #fff;
+	}
+	#endall{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: #000;
+		opacity: 1;
+		color: #fff;
+		padding: 100px 20px;
+		display: none;
+
+	}
+	#endall>h1, #endall>a{
+		text-align: center;
+		margin:100px auto ;
+		font-size: 2.5rem;
+	}
+	#timespan{
+		font-size: 3.5rem;
+		font-weight: bold;
+	}
+	#secone{
+		width: 70%;
+		margin: 13% 15%;
+		font-family: Candara;
+		font-size: 4.5rem;
+		font-weight: bold;
+		transition-timing-function: ease;
+		text-align: center;
+	}
+	#timeone{
+		display: inline-block;
+	}
+	#timezone{
+		position: absolute;
+		display: inline-block;
+		top: 10px;
+		font-size: 2rem;
+	}
+	#timezone button{
+		width: 50px;
+		height: 50px;
+	}
+	p{
+		display: inline;
+	}
+	input{
+		outline: none;
+		border-top-style: none;
+		border-left-style: none;
+		border-right-style: none;
+		border-bottom: 5px solid #000;
+		font-size: 3rem;
+		font-family: Courier;
+		width: 250px;
+		opacity: 0.6;
+		
+		padding-left: 35px;
+	}
+	button{
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		transition: display 5s;
+		transition-timing-function: ease;
+		background-color: #000;
+		color: #fff;
+	}
+	#input4{
+		width: 100%;
+	}
+	@media (max-width: 470px){
+		#secone{
+		width: 80%;
+		margin: 10% 10%;
+		font-family: Candara;
+		font-size: 3.5rem;
+		font-weight: bold;
+		transition-timing-function: ease;
+		text-align: center;
+	}
+		main{
+		position: absolute;
+		top: 0%;
+		margin: 0;
+		display: inline-block;
+		width: 100%;
+		transition: Background-color 2s;
+		transition-timing-function: ease;
+		opacity: 0.95;
+		background-color: #fff;
+	}
+	#endall{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: #000;
+		opacity: 1;
+		color: #fff;
+		padding: 100px 20px;
+		display: none;
+	}
+	#endall>h1, #endall>a{
+		text-align: center;
+		margin:100px auto ;
+		font-size: 1rem;
+	}
+	#secone{
+		width: 70%;
+		margin: 17% 15%;
+		font-family: Candara;
+		font-size: 3.5rem;
+		font-weight: bold;
+		transition-timing-function: ease;
+		text-align: center;
+	}
+	#timeone{
+		display: inline-block;
+	}
+	#timezone{
+		position: absolute;
+		display: inline-block;
+		top: 10px;
+		font-size: 1.2rem;
+	}
+	#timezone button{
+		width: 45px;
+		height: 45px;
+	}
+	p{
+		display: inline;
+	}
+	input{
+		outline: none;
+		border-top-style: none;
+		border-left-style: none;
+		border-right-style: none;
+		border-bottom: 5px solid #000;
+		font-size: 3rem;
+		font-family: Courier;
+		width: 250px;
+		opacity: 0.6;
+		
+		padding-left: 35px;
+	}
+	button{
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		transition: display 5s;
+		transition-timing-function: ease;
+		background-color: #000;
+		color: #fff;
+	}
+	#input4{
+		width: 100%;
+	}
+	}
+</style>
+<script type="text/javascript">
+	let name ;
+	let color;
+	let year;
+	var et;
+	function timeout(){
+		document.getElementById('para4').style.display = 'inline';
+		document.getElementById('para3').style.display = 'none';
+		document.getElementById('input2').style.display = 'inline';
+	}
+
+	function timeout2(){
+		document.getElementById('para6').style.display = 'inline';
+		document.getElementById('para5').style.display = 'none';
+		document.getElementById('input1').style.display = 'inline';
+	}
+	function timeout3(){
+		document.getElementById('para8').style.display = 'inline';
+		document.getElementById('para7').style.display = 'none';
+		document.getElementById('input4').style.display = 'inline';
+	}
+	setTimeout(timeout2, 4000);
+	function showButton(btn){
+		document.getElementById(btn).style.display = 'inline';
+		
+	}
+	
+	function showDiv(div1, div2){
+		document.getElementById(div1).style.display = 'inline';
+		document.getElementById(div2).style.display = 'none';
+	}
+
+	function para1(){
+		et = setTimeout(timeout, 3000);
+		name = document.getElementById("input1").value;
+		if (name.length < 1){
+
+		}
+		else {
+			document.getElementById("span1").innerHTML = name;
+			document.getElementById("span2").innerHTML = name;
+		}
+	}
+
+	function changeColor(){
+		color = document.getElementById("input2").value;
+		color = color.split(' ');
+		color = color.join('');
+		
+		for (var colo in colors){
+			if (color.toLowerCase() == colors[colo].toLowerCase()){
+				document.getElementById('main').style.backgroundColor = color;
+			
+				showDiv('div3','div2');
+				break;
+			}	
+			else{
+				document.getElementById("para2").style.display = 'inline';
+				document.getElementById("para3").style.display = 'none';
+				document.getElementById("para4").style.display = 'none';
+				document.getElementById("span5").innerHTML = color;
+				document.getElementById("input2").value="";
+				document.getElementById("para11").style.display = 'inline';
+			}
+		}
+		if (color.toLowerCase() == 'black' || color.toLowerCase() == 'blue' ){document.body.style.color = 'white';};
+		
+	}
+
+	function changeBack(){
+		document.getElementById('main').style.backgroundColor = "#fff";
+		document.body.style.color = '#000';
+	}
+
+	function cear(){
+		document.getElementById('input4').value = "";
+	}
+
+	function birthYear(){
+		year = document.getElementById("input3").value;
+		if (year.length < 1){
+
+		}
+		else {
+
+			document.getElementById("span4").innerHTML = year;
+			document.getElementById("span3").innerHTML = celebYear[parseFloat(year)];
+		}
+		setTimeout(timeout3, 3000);
+	}
+
+	const colors = [  "AliceBlue",  "AntiqueWhite",
+  "Aqua",  "Aquamarine",  "Azure",  "Beige",  "Bisque",  "Black",  "BlanchedAlmond", "Blue",  "BlueViolet",  "Brown",  "BurlyWood",  "CadetBlue",
+  "Chartreuse",  "Chocolate",  "Coral",  "CornflowerBlue",  "Cornsilk",  "Crimson",  "Cyan",  "DarkBlue",  "DarkCyan",  "DarkGoldenRod",  "DarkGray",  "DarkGrey",
+  "DarkGreen",  "DarkKhaki",  "DarkMagenta",  "DarkOliveGreen",  "DarkOrange",  "DarkOrchid",  "DarkRed",  "DarkSalmon",  "DarkSeaGreen",  "DarkSlateBlue",
+  "DarkSlateGray",  "DarkSlateGrey",  "DarkTurquoise",  "DarkViolet",  "DeepPink",  "DeepSkyBlue",  "DimGray",  "DimGrey",  "DodgerBlue",  "FireBrick",  "FloralWhite",
+  "ForestGreen",  "Fuchsia",  "Gainsboro",  "GhostWhite",  "Gold",  "GoldenRod",  "Gray",  "Grey",  "Green",  "GreenYellow",  "HoneyDew",  "HotPink",  "IndianRed",  "Indigo",  "Ivory",  "Khaki",  "Lavender",  "LavenderBlush",  "LawnGreen",  "LemonChiffon",  "LightBlue",  "LightCoral",  "LightCyan",  "LightGoldenRodYellow",  "LightGray",
+  "LightGrey",  "LightGreen",  "LightPink",  "LightSalmon",  "LightSeaGreen",  "LightSkyBlue",  "LightSlateGray",  "LightSlateGrey",  "LightSteelBlue",  "LightYellow",
+  "Lime",  "LimeGreen",  "Linen",  "Magenta",  "Maroon",  "MediumAquaMarine",  "MediumBlue",  "MediumOrchid",  "MediumPurple",  "MediumSeaGreen",  "MediumSlateBlue",
+  "MediumSpringGreen",  "MediumTurquoise",  "MediumVioletRed",  "MidnightBlue",  "MintCream",  "MistyRose",  "Moccasin",  "NavajoWhite",  "Navy",  "OldLace",  "Olive",
+  "OliveDrab",  "Orange",  "OrangeRed",  "Orchid",  "PaleGoldenRod",  "PaleGreen",  "PaleTurquoise",  "PaleVioletRed",  "PapayaWhip",  "PeachPuff",  "Peru",  "Pink",
+  "Plum",  "PowderBlue",  "Purple",  "Red",  "RebeccaPurple",  "RosyBrown",  "RoyalBlue",  "SaddleBrown",  "Salmon",  "SandyBrown",  "SeaGreen",  "SeaShell",
+  "Sienna",  "Silver",  "SkyBlue",  "SlateBlue",  "SlateGray",  "SlateGrey",  "Snow",  "SpringGreen",  "SteelBlue",  "Tan",  "Teal",  "Thistle",  "Tomato",  "Turquoise",  "Violet", "White",  "Wheat",   "WhiteSmoke",  "Yellow",  "YellowGreen"];
+  
+  const celebYear = {
+  	1975: 'Angelina Jolie',1976: 'Chadwick Boseman',1977: 'Kanye West',1978: 'Kobe Bryant',1979: 'Kevin Hart',1980: 'Kim Kardashian', 1981: 'Beyoncé', 1982: 'Lil\' Wayne',1983: 'Chris Hemsworth',1984: 'LeBron James',1985: 'Cristiano Ronaldo',1986: 'Drake',1987: 'Michael B. Jordan',1988: 'Rihanna', 1989: 'Taylor Swift', 1990: 'Emma Watson', 1991: 'Ed Sheeran', 1992: 'Miley Cyrus',1993: 'Ariana Grande',1994: 'Justin Bieber',1995: 'Kendall Jenner',1996: 'Zendaya',1997: 'Kylie Jenner',1998: 'Shawn Mendes',1999: 'Sabrina Carpenter',2000: 'Willow Smith', 2001: 'Billie Eilish',2002: 'Skai Jackson',2003: 'Jojo Siwa', 2004: 'Millie Bobby Brown', 2005: 'Honey Boo Boo', 2006: 'Miss Bee', 2007: 'Aubrey Anderson-Emmons', 2008: 'Coco Quinn', 2009: 'Prince Henrik of Denmark', 2010:'Naz Norris', 2011:' Brock Brenner' ,2012: 'Blue Ivy', 2013: 'North West', 2014: 'Dashiell Messitt and Fox Messitt', 
+		2015: 'Princess Charlotte of Cambridge', 2016: 'Ines Lively Reynolds'
+  };
+
+  const will = [
+  'It is certain.', 'It is decidedly so.', 'Very doubtful.', 'Outlook not so good', 'My sources say no.', 'My reply is no.', 'Without a doubt.', 'Yes – definitely',
+  'You may rely on it.', 'As I see it, yes.', 'Most likely.', 'Outlook good.', 'Yes.', 'Signs point to yes.', 'Reply hazy, try again.', 'Ask again later.', 'Better not tell you now.', 'Cannot predict now.', 'Concentrate and ask again.', 'Don\'t count on it.', 'Yh, that\'s a No'];
+
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  var d = new Date();
+  var nextMonth = d.getMonth()+2
+  var nextDay = d.getDay()+2;
+if (d.getMonth()>9){nextMonth = 1};
+if (d.getDay()>4){nextDay = 1};
+  const when = [
+  'Well today is '+days[d.getDay()]+ ', so in 2 days time', months[d.getMonth()]+ ' might just be the month it happens', months[nextMonth]+' is definitely when it happens',
+  days[nextDay]+' is the day it happens', 'The real question is, When do you want it?', 'Tomorrow', 'I\'m not interested in getting into that now.', 'someday between Tuesday and Friday', 'If it doesnt happen in november then it will be January', 'In less than 72 hours', 'In a couple of days', 'In a few weeks', 'Give it some few months', 'This is gonna be next year', 'At the right time', 'Try focusing on Now and not the future'];
+
+  const who = [
+  'I don\'t think i can mention anyone\'s name', 'Who do you have in mind?', 'I don\'t think i can say who', 'Do you really want to know who', 'That is top secret', 'I\’d prefer not to talk about that.', 'That topic is too complicated to discuss at this moment.', 'That\'s a very long story, and a lifetime wouldn\'t be enough time to explain.', 'Whoever wants it hard enough', 'Rich Uncle Pennybags', 'I know who, but i dont think i can tell you', 'That\'s on a need to know basic'];
+
+  const how = [
+  'By being you', 'Think about how it should be done', 'How do you want it', 'Heck if i know', 'Try asking yourself how', 'I\'d rather not say', 'I\'d rather not get into this.', 'That topic is too difficult to discuss at this moment.', 'If I told you, I\'d have to kill you.', 'Shhhh… That\'s a secret. [said with a smile]', 'I would prefer to talk about another subject', 'By being the best possible'];
+
+  const what = [
+  'Whatever you want', 'What you are supposed to', 'What do you want the answer to be?', 'This is a tricky one', 'I can\'t list them', 'No Psychic can tell you this', 'You already know the answer to this one']
+
+  let checkList = [];
+function future(){
+	document.getElementById('para10').style.display = 'none';
+	document.getElementById('para9').innerHTML = "";
+	let question1 = document.getElementById('input4').value;
+	var crossCheck = question1.trim().toLowerCase();
+	
+	
+	question = question1.trim().toLowerCase().split(' ');
+	let outcome = " Sorry i\'m still learning this, Try asking another Question";
+	if (checkList.includes(crossCheck)){
+		outcome = 'You already asked me this question '+name;
+	}
+	else if (question.indexOf('birthday')>-1){
+		outcome = 'All i can say is I better get cake that day';
+	}
+	else if (question.indexOf('name')>-1){
+		outcome = 'Josephine and '+name+', are the only names that matters';
+	}
+	else if (question.indexOf('president')>-1 || question.indexOf('election')>-1){
+		outcome = 'What matters '+name+', is that you vote.';
+	}
+	else if (question[0] == "is" || question[0] == "it" || question[0] == "are"){
+		outcome = name +' this is not a question about the future';
+	}
+	else if (question[0] == "will" || question[0] == "am" || question[0] == "would"){
+		var random = Math.floor(Math.random() * will.length);
+		outcome = will[random]
+	}
+	else if (question[0] == "when"){
+		var random = Math.floor(Math.random() * when.length);
+		outcome = when[random]
+	}
+	else if (question[0] == "what"){
+		var random = Math.floor(Math.random() * what.length);
+		outcome = what[random]
+	}
+	else if (question[0] == "how"){
+		var random = Math.floor(Math.random() * how.length);
+		outcome = how[random]
+	}
+	else if (question[0] == "who"){
+		var random = Math.floor(Math.random() * who.length);
+		outcome = who[random]
+	}
+	document.getElementById('para9').innerHTML = outcome;
+	setTimeout(function inshow(){document.getElementById('para10').style.display = 'inline'},3000);
+	document.getElementById('para8').style.display = 'none';
+	checkList.push(question1.trim().toLowerCase());
+}
+
+function predictColor(){
+	let printPred;
+	for (var i = 0; i < colors.length; i++) {
+		var colst = colors[i].toLowerCase();
+	 if (color.substr(0,10)==colst.substr(0,10)){
+	printPred = colst;
+	i=colors.length;
+	break;
+	}
+	else if (color.substr(0,9)==colst.substr(0,9)){
+	printPred = colst;
+	i=colors.length;
+	break;
+	}
+	else if (color.substr(0,8)==colst.substr(0,8)){
+	 printPred = colst;
+	 i=colors.length;
+	 break;
+	}
+	else if (color.substr(0,7)==colst.substr(0,7)){
+	 printPred = colst;
+	 i=colors.length;
+	 break;
+	}
+	else if (color.substr(0,6)==colst.substr(0,6)){
+	printPred = colst;
+	i=colors.length;
+	break;
+	}
+	else if (color.substr(0,5)==colst.substr(0,5)){
+	printPred = colst;
+	i=colors.length;
+	break;
+	}
+	else if (color.substr(0,4)==colst.substr(0,4)){
+	 printPred = colst;
+	 i=colors.length;
+	 break;
+	}
+	else if (color.substr(0,3)==colst.substr(0,3)){
+	printPred = colst;
+	i=colors.length;
+	}
+	else if (color.substr(0,2)==colst.substr(0,2)){
+	 	printPred = colst;
+	 	i=colors.length;
+	 	
+	}
+	else if (color.substr(0,1)==colst.substr(0,1)){
+	 printPred = colst;
+	
+	}
+	
+	
+	}
+	
+	document.getElementById('para11').innerHTML = 'Did you mean '+printPred;
+}
+
+var h1 = document.getElementsByTagName('h1')[0],
+    start = document.getElementById('start'),
+    clear = document.getElementById('clear'),
+    seconds = 0, minutes = 0, hours = 0,
+    t;
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    
+    h1.textContent = "Time: "+(minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+timer();
+
+
+
+
+</script>
